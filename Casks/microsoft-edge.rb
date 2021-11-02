@@ -23,6 +23,8 @@ cask "microsoft-edge" do
 
   auto_updates true
 
+  pkg "MicrosoftEdge-#{version}.pkg"
+
   uninstall pkgutil: "com.microsoft.edgemac"
 
   zap trash: [
