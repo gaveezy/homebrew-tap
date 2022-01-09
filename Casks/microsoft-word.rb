@@ -13,7 +13,7 @@ cask "microsoft-word" do
     strategy :header_match
   end
 
-  auto_updates false
+  auto_updates true
   conflicts_with cask: "microsoft-office"
   depends_on macos: ">= :sierra"
 
@@ -23,6 +23,7 @@ cask "microsoft-word" do
     "com.microsoft.package.Microsoft_Word.app",
     "com.microsoft.pkg.licensing",
   ],
+  launchctl: "com.microsoft.office.licensingV2.helper"
 
   zap trash: [
     "~/Library/Application Scripts/com.microsoft.Word",

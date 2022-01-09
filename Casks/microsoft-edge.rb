@@ -2,12 +2,12 @@ cask "microsoft-edge" do
   folder = Hardware::CPU.intel? ? "C1297A47-86C4-4C1F-97FA-950631F94777" : "03adf619-38c6-4249-95ff-4a01c0ffc962"
   linkid = Hardware::CPU.intel? ? "2069148" : "2093504"
 
-  version "97.0.1072.55"
+  version "95.0.1020.40"
 
   if Hardware::CPU.intel?
-    sha256 "e75ecedb69c51675759850abc7f8a446e6836d47d35e676d4619a89ad7f88702"
+    sha256 "cc865bc4848cbe07a318cfce1df7f6586a0af2ca99e3c5c87b057ec1cc6845fc"
   else
-    sha256 "85c18348ea0682a7772d7a7e12427fec9bc0639310552ddbd8be4bfddf4296ed"
+    sha256 "9a73d1970656a7f7a3ba654a892a7085adaedefa566e32340bfdbffb1191faa2"
   end
 
   url "https://officecdn-microsoft-com.akamaized.net/pr/#{folder}/MacAutoupdate/MicrosoftEdge-#{version}.pkg",
@@ -21,7 +21,7 @@ cask "microsoft-edge" do
     strategy :header_match
   end
 
-  auto_updates false
+  auto_updates true
 
   pkg "MicrosoftEdge-#{version}.pkg"
 
